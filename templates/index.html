@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Windborne Weather Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Fira Sans', sans-serif;
+            background: linear-gradient(160deg, #10151b, #1e2b38);
+            color: #f1f1f1;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 40px;
+            font-weight: 500;
+            font-size: 2.4em;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: auto;
+        }
+
+        .balloon-item {
+            background-color: rgba(255, 255, 255, 0.03);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            border-left: 4px solid #4fd1ff;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            transition: background-color 0.2s ease;
+        }
+
+        .balloon-item:hover {
+            background-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .balloon-label {
+            font-size: 0.95em;
+            color: #8ecae6;
+            font-weight: bold;
+        }
+
+        .balloon-value {
+            font-size: 1.1em;
+            color: #e0f7fa;
+            margin-bottom: 6px;
+        }
+
+        .no-data {
+            text-align: center;
+            font-size: 1.2em;
+            color: #bbb;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Windborne Balloon Weather</h1>
+        {% if balloons %}
+            {% for balloon in balloons %}
+                <div class="balloon-item">
+                    <div class="balloon-label">Location</div>
+                    <div class="balloon-value">({{ balloon.lat }}, {{ balloon.lon }})</div>
+
+                    <div class="balloon-label">Temperature</div>
+                    <div class="balloon-value">{{ balloon.temperature }} °C</div>
+
+                    <div class="balloon-label">Condition</div>
+                    <div class="balloon-value">{{ balloon.condition }}</div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="no-data">No balloon weather data available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
