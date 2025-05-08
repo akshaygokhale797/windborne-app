@@ -5,12 +5,11 @@ url = "https://windbornesystems.com/career_applications.json"
 data = {
     "career_application": {
         "name": "Akshay Gokhale",
-        "email": "youremail@example.com",
+        "email": "akshaygokhale2001@gmail.com",
         "role": "Atlas Software Intern",
         "notes": (
-            "Most skilled in full-stack development and data wrangling. "
-            "I'm a collaborative builder who enjoys debugging messy systems and refining them into simple interfaces. "
-            "I chose OpenWeather's API because it's live and dynamic, just like Windborne’s — combining the two felt like a natural fit for real-time exploration."
+            "Linux & Python Infrastructure & Data Science and ML"
+            "I feel like I bring an open-mindedness and willingness to change/grow my skills/habits, which makes me easy to work with!"
         ),
         "submission_url": "https://your-project-link.com",
         "portfolio_url": "https://github.com/akshaygokhale797",
